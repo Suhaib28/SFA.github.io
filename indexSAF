@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Saayam For All</title>
+    <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:400,700|Mukta:500,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic styling */
+        body { font-family: 'Mukta', sans-serif; margin: 0; padding: 0; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        .header-brand img { max-height: 50px; }
+        
+        /* Tab Styling */
+        .tab-container { display: flex; justify-content: space-around; padding: 1em; background-color: #333; }
+        .tab-container a { color: #fff; padding: 1em; text-decoration: none; font-weight: bold; }
+        .tab-container a:hover, .tab-container a.active { background-color: #555; border-radius: 5px; }
+        
+        /* Content sections */
+        .tab-content { display: none; padding: 2em 0; }
+        .tab-content.active { display: block; }
+        
+        /* General Section Styling */
+        section { padding: 2em 0; }
+        h2 { color: #333; font-weight: bold; }
+        p { color: #666; }
+        
+        /* Hero Section */
+        .hero { background-color: #f8f9fa; text-align: center; }
+        .hero h1 { font-size: 2.5em; color: #333; }
+        .hero p { font-size: 1.2em; color: #555; }
+        
+        /* Buttons */
+        .button { text-decoration: none; padding: 0.7em 1.5em; border-radius: 5px; color: white; font-weight: bold; }
+        .button-primary { background-color: #007bff; }
+        .button-secondary { background-color: #28a745; }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="site-header-inner">
+                <div class="brand header-brand">
+                    <h1 class="m-0">
+                        <a href="#">
+                            <img src="logo.png" alt="Saayam For All Logo">
+                        </a>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tab Navigation -->
+    <div class="tab-container">
+        <a href="#overview" onclick="showTab('overview')" class="active">Overview</a>
+        <a href="#about-us" onclick="showTab('about-us')">About Us</a>
+        <a href="#programs" onclick="showTab('programs')">Programs</a>
+        <a href="#donate" onclick="showTab('donate')">Donate</a>
+        <a href="#board" onclick="showTab('board')">Board of Directors</a>
+    </div>
+
+    <!-- Tab Content Sections -->
+    <main>
+        <section class="tab-content active" id="overview">
+            <div class="container">
+                <div class="hero">
+                    <h1>Empowering Change</h1>
+                    <p>Saayam For All is a non-profit organization dedicated to creating a higher and brighter future for underprivileged children.</p>
+                    <a class="button button-primary" href="#">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="tab-content" id="about-us">
+            <div class="container">
+                <h2>About Saayam For All</h2>
+                <p>We are a Really passionate group of individuals who believe that every child deserves the opportunity to reach their full potential. Through our education and healthcare programs, we strive to create a world where all children have access to the resources they need to thrive.</p>
+                <a class="button button-secondary" href="#">Read Our Story</a>
+            </div>
+        </section>
+
+        <section class="tab-content" id="programs">
+            <div class="container">
+                <h2>Our Programs</h2>
+                <p>Saayam For All offers programs focused on education, healthcare, and overall well-being for underprivileged children.</p>
+            </div>
+        </section>
+
+        <section class="tab-content" id="donate">
+            <div class="container">
+                <h2>Make a Difference</h2>
+                <p>Your donation can help us continue to provide vital programs and services to underprivileged children.</p>
+                <a class="button button-primary" href="#">Donate Now</a>
+            </div>
+        </section>
+
+        <section class="tab-content" id="board">
+            <div class="container">
+                <h2>Board of Directors</h2>
+                <p>Meet the dedicated team leading Saayam For All, ensuring that our mission is achieved.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(section => section.classList.remove('active'));
+            // Deactivate all tabs
+            document.querySelectorAll('.tab-container a').forEach(tab => tab.classList.remove('active'));
+            // Show the selected tab content and activate the tab
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector(`.tab-container a[href="#${tabId}"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
